@@ -1,8 +1,11 @@
 import {default as YearCalendar} from "js-year-calendar";
 import { CalClass, Selector, AssignClass, AssignAttr } from "./types";
+import {
+  App, PeriodicNotesPlugin,
+} from "obsidian";
 
 
-// Taken from js-year-calendar library
+// Copied from js-year-calendar library
 interface CalendarDataSourceElement {
     /**
      * The name of the element. Used for context menu or specific events.
@@ -32,10 +35,15 @@ interface CalendarDataSourceElement {
 
 
 export default class Calendar<T extends CalendarDataSourceElement> extends YearCalendar<T> {
+  periodicNotesPlugin: PeriodicNotesPlugin
+
   constructor(
     public el: HTMLElement,
+    public app: App,
   ) {
     super(el);
+    this.periodicNotesPlugin = app.plugins.getPlugin("periodic-notes") as PeriodicNotesPlugin;
+    console.log(this.periodicNotesPlugin.calendarSetManager.getCalendarSets())
   }
 
   init() {

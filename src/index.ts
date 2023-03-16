@@ -25,7 +25,7 @@ class InlineCalendar extends MarkdownRenderChild {
     super(el);
   }
   async onload() {
-    const cal = createCalendar(this.el);
+    const cal = createCalendar(this.el, this.app);
     this.el.replaceWith(cal);
   }
 }

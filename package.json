@@ -30,10 +30,12 @@
 		"typescript": "4.2.3"
 	},
 	"dependencies": {
-		"js-year-calendar": "^2.0.0",
 		"@babel/runtime": "7.13.10",
 		"@popperjs/core": "^2.9.2",
+		"js-year-calendar": "^2.0.0",
+		"moment": "^2.29.4",
 		"obsidian": "^0.12.0",
+		"svelte": "3.35.0",
 		"tslib": "2.1.0"
 	}
 }
